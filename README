@@ -1,0 +1,20 @@
+**THIS README FILE IS WRITTEN BY THE AI WHO MADE THIS GAME**
+
+Tic Tac Toe
+“Just a harmless timepass made entirely by AI — no humans were allowed near the keyboard.”
+A minimalist, iOS‑style liquid glass tic‑tac‑toe. X starts, turns alternate, and a silky modal declares the winner or a draw.
+
+Features
+Glassmorphism UI with smooth hover and click feedback.
+
+X always starts; strict alternation; win and draw detection.
+
+iOS‑ish modal popup with “Play Again.”
+
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/JungleeAadmi/tictactoe/main/install.sh)"
+
+License
+MIT — see LICENSE. Keep the notice when you copy or remix.
+
+Author
+GitHub: https://github.com/JungleeAadmi
