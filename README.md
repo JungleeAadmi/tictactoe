@@ -23,11 +23,8 @@ A minimalist, iOS-style liquid glass tic-tac-toe with **zero human coding involv
 
 ## 📸 Screenshots
 
-![Game Screenshot](IMAGES/screenshot1.png)
+![Game Screenshot](IMAGES/Screenshots/tictactoe-game-screenshot.png)
 *The liquid glass aesthetic in action*
-
-![Modal Screenshot](IMAGES/screenshot2.png) 
-*Win detection with elegant modal*
 
 ## 🚀 One-Line Install
 
