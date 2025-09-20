@@ -31,3 +31,16 @@ A minimalist, iOS-style liquid glass tic-tac-toe with **zero human coding involv
 Perfect for **LXC containers in Proxmox**, VPS, or any Linux system:
 
 ### Quick Install (Port 8080)
+
+bash -c "$(wget -qO- https://raw.githubusercontent.com/JungleeAadmi/tictactoe/main/install.sh)"
+### Custom Port Install
+
+PORT=9000 bash -c "$(wget -qO- https://raw.githubusercontent.com/JungleeAadmi/tictactoe/main/install.sh)"
+
+
+### Alternative (curl)
+
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/JungleeAadmi/tictactoe/main/install.sh)"
+
+> **What it does:** Auto-installs Docker (if needed), pulls the image, starts the container, and shows access URLs. Works on Debian, Ubuntu, CentOS, RHEL.
+
