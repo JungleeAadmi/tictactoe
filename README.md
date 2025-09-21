@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎮 Tic Tac Toe — Liquid Glass
+# 🎮 Tic Tac Toe
 
 *Just a harmless timepass made entirely by AI — no humans were allowed near the keyboard.*
 
