@@ -1,52 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe - iOS Liquid Glass</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tic Tac Toe — Liquid Glass</title>
+  <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-    <div class="game-container">
-        <div class="header">
-            <h1>Tic Tac Toe</h1>
-            <div class="turn-indicator">
-                <span id="currentPlayer">X</span>'s Turn
-            </div>
-        </div>
-        
-        <div class="game-board">
-            <div class="board-grid">
-                <div class="cell" data-index="0"></div>
-                <div class="cell" data-index="1"></div>
-                <div class="cell" data-index="2"></div>
-                <div class="cell" data-index="3"></div>
-                <div class="cell" data-index="4"></div>
-                <div class="cell" data-index="5"></div>
-                <div class="cell" data-index="6"></div>
-                <div class="cell" data-index="7"></div>
-                <div class="cell" data-index="8"></div>
-            </div>
-        </div>
-    </div>
+  <main class="container">
+    <header class="header">
+      <h1 class="title">Tic Tac Toe</h1>
+      <div class="subtitle">Play with a friend — keyboard support (1-9)</div>
+      <div class="status">Current Player: <span id="currentPlayer" class="player">X</span></div>
+    </header>
 
-    <!-- Win Modal -->
-    <div id="winModal" class="modal hidden">
-        <div class="modal-backdrop"></div>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="winMessage">X Wins!</h2>
-            </div>
-            <div class="modal-body">
-                <div class="winner-icon">🎉</div>
-                <p id="winSubtext">Congratulations!</p>
-            </div>
-            <div class="modal-footer">
-                <button id="playAgainBtn" class="btn btn--primary btn--lg">Play Again</button>
-            </div>
-        </div>
-    </div>
+    <section class="board" role="grid" aria-label="Tic Tac Toe board">
+      <div class="cell" role="button" tabindex="0" aria-label="Cell 1"></div>
+      <div class="cell" role="button" tabindex="0" aria-label="Cell 2"></div>
+      <div class="cell" role="button" tabindex="0" aria-label="Cell 3"></div>
 
-    <script src="app.js"></script>
+      <div class="cell" role="button" tabindex="0" aria-label="Cell 4"></div>
+      <div class="cell" role="button" tabindex="0" aria-label="Cell 5"></div>
+      <div class="cell" role="button" tabindex="0" aria-label="Cell 6"></div>
+
+      <div class="cell" role="button" tabindex="0" aria-label="Cell 7"></div>
+      <div class="cell" role="button" tabindex="0" aria-label="Cell 8"></div>
+      <div class="cell" role="button" tabindex="0" aria-label="Cell 9"></div>
+    </section>
+
+    <footer class="footer">
+      <button id="playAgainBtn" class="btn">Restart</button>
+    </footer>
+  </main>
+
+  <!-- Win modal -->
+  <div id="winModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <h2 id="winMessage">You win!</h2>
+      <p id="winSubtext">Congratulations</p>
+      <button id="playAgainBtn" class="btn">Play again</button>
+    </div>
+  </div>
+
+  <script src="/assets/app.js"></script>
 </body>
 </html>
