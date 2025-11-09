@@ -1,55 +1,54 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tic Tac Toe — Liquid Glass Edition</title>
-  <link rel="stylesheet" href="/assets/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe - Made by AI</title>
+    <!-- POINTED TO /assets/ so installer-served files are found -->
+    <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-  <div class="game-container">
-    <div class="header">
-      <h1>Tic Tac Toe</h1>
-      <div class="turn-indicator">
-        Current Player: <span id="currentPlayer">X</span>
-      </div>
+    <div class="game-container">
+        <div class="header">
+            <h1>Tic Tac Toe</h1>
+            <div class="turn-indicator">
+                <span id="currentPlayer">X</span>'s Turn
+            </div>
+        </div>
+        
+        <div class="game-board">
+            <div class="board-grid">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+        </div>
     </div>
 
-    <div class="game-board">
-      <div class="board-grid">
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-      </div>
+    <!-- Win Modal -->
+    <div id="winModal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="winMessage">X Wins!</h2>
+            </div>
+            <div class="modal-body">
+                <div class="winner-icon">🎉</div>
+                <p id="winSubtext">Congratulations!</p>
+            </div>
+            <div class="modal-footer">
+                <button id="playAgainBtn" class="btn btn--primary btn--lg">Play Again</button>
+            </div>
+        </div>
     </div>
 
-    <footer>
-      <button id="playAgainBtn" class="btn btn--primary">Restart</button>
-    </footer>
-  </div>
-
-  <!-- Win Modal -->
-  <div id="winModal" class="modal hidden">
-    <div class="modal-backdrop"></div>
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 id="winMessage">You win!</h2>
-      </div>
-      <div class="modal-body">
-        <p id="winSubtext">Congratulations!</p>
-      </div>
-      <div class="modal-footer">
-        <button id="playAgainBtn" class="btn btn--primary">Play again</button>
-      </div>
-    </div>
-  </div>
-
-  <script src="/assets/app.js"></script>
+    <!-- POINTED TO /assets/ so installer-served files are found -->
+    <script src="/assets/app.js"></script>
 </body>
 </html>
