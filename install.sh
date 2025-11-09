@@ -10,6 +10,7 @@ REPO_RAW_BASE="https://raw.githubusercontent.com/JungleeAadmi/tictactoe/main"
 PORT="${PORT:-80}"
 SITE_DIR="/var/www/tictactoe"
 ASSETS_DIR="${SITE_DIR}/assets"
+ICONS_DIR="${ASSETS_DIR}/icons"
 NGINX_CONF="/etc/nginx/sites-available/tictactoe"
 NGINX_LINK="/etc/nginx/sites-enabled/tictactoe"
 
@@ -43,14 +44,22 @@ fi
 # --- Create site directories ---
 echo "[INFO] Setting up site directory structure..."
 mkdir -p "${ASSETS_DIR}"
-chown -R www-data:www-data "${SITE_DIR}"
-chmod -R 755 "${SITE_DIR}"
+mkdir -p "${ICONS_DIR}"
+chown -R www-data:www-data "${SITE_DIR}" || true
+chmod -R 755 "${SITE_DIR}" || true
 
-# --- Download latest files from GitHub ---
+# --- Download latest files from GitHub (overwrite) ---
 echo "[INFO] Downloading website files from repository..."
+# main html
 wget -qO "${SITE_DIR}/index.html" "${REPO_RAW_BASE}/index.html"
-wget -qO "${ASSETS_DIR}/app.js" "${REPO_RAW_BASE}/app.js"
-wget -qO "${ASSETS_DIR}/style.css" "${REPO_RAW_BASE}/style.css"
+# assets
+wget -qO "${ASSETS_DIR}/app.js" "${REPO_RAW_BASE}/assets/app.js"
+wget -qO "${ASSETS_DIR}/style.css" "${REPO_RAW_BASE}/assets/style.css"
+# icons (optional - ignore failures)
+wget -qO "${ICONS_DIR}/favicon.ico" "${REPO_RAW_BASE}/assets/icons/favicon.ico" || true
+wget -qO "${ICONS_DIR}/apple-touch-icon.png" "${REPO_RAW_BASE}/assets/icons/apple-touch-icon.png" || true
+# keep original reference icon if present in IMAGES/Icon
+# (not required for site to function)
 
 # --- Create nginx site configuration ---
 echo "[INFO] Creating nginx configuration..."
@@ -75,7 +84,7 @@ server {
         try_files \$uri \$uri/ =404;
     }
 
-    # Optional: cache static files
+    # Optional: cache static assets
     location ~* \.(?:css|js|png|jpg|jpeg|gif|ico|svg)$ {
         expires 7d;
         add_header Cache-Control "public";
@@ -104,8 +113,8 @@ else
 fi
 
 # --- Final permissions ---
-chown -R www-data:www-data "${SITE_DIR}"
-chmod -R 755 "${SITE_DIR}"
+chown -R www-data:www-data "${SITE_DIR}" || true
+chmod -R 755 "${SITE_DIR}" || true
 
 # --- Done ---
 IP_ADDR="$(hostname -I | awk '{print $1}')"
@@ -117,7 +126,6 @@ echo "📁 Files installed at: ${SITE_DIR}"
 echo "🧱 Served by: nginx (service enabled)"
 echo
 echo "To uninstall later:"
-echo "  sudo rm -rf ${SITE_DIR} ${NGINX_CONF} ${NGINX_LINK}"
-echo "  sudo systemctl reload nginx"
+echo "  sudo bash -c \"\$(wget -qO- https://raw.githubusercontent.com/JungleeAadmi/tictactoe/main/uninstall.sh)\""
 echo
 echo "Enjoy your game! 🎮"
