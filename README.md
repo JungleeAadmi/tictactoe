@@ -11,44 +11,33 @@
 
 </div>
 
+---
+
 ## ✨ Features
 
 A minimalist, iOS-style liquid glass tic-tac-toe with **zero human coding involved**.
 
-- 🌟 **Glassmorphism UI** with smooth hover and click feedback
+- 🌟 **Glassmorphism UI** with smooth hover and click feedback  
 - 🎯 **X always starts** — strict alternation with win/draw detection  
-- 📱 **iOS-ish modal** popup with "Play Again" button
-- 🐳 **Containerized** — runs anywhere Docker exists
-- ⚡ **One-line install** — like Pi-hole, OMV, and other self-hosted apps
+- 📱 **iOS-ish modal** popup with "Play Again" button  
+- 🐳 **Containerized** — runs anywhere Docker exists  
+- ⚡ **One-line install** — like Pi-hole, OMV, and other self-hosted apps  
+
+---
 
 ## 📸 Screenshots
 
-![Game Screenshot](IMAGES/Screenshots/tictactoe-game-screenshot.png)
+![Game Screenshot](IMAGES/Screenshots/tictactoe-game-screenshot.png)  
 *The liquid glass aesthetic in action*
 
-## 🚀 One-Line Install
-
-Perfect for **LXC containers in Proxmox**, VPS, or any Linux system:
+---
 
 ## 🚀 One-Line Install
 
 Perfect for **LXC containers in Proxmox**, VPS, or any Linux system:
 
 ### 🧩 Quick Install (Port 8080)
+
 ```bash
 bash -c "$(wget -qO- https://raw.githubusercontent.com/JungleeAadmi/tictactoe/refs/heads/main/install.sh)"
-
-
-### Quick Install (Port 8080)
-bash -c "$(wget -qO- https://raw.githubusercontent.com/JungleeAadmi/tictactoe/refs/heads/main/install.sh)"
-
-### Custom Port Install
-
-PORT=9000 bash -c "$(wget -qO- https://raw.githubusercontent.com/JungleeAadmi/tictactoe/refs/heads/main/install.sh)"
-
-### Alternative (curl)
-
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/JungleeAadmi/tictactoe/refs/heads/main/install.sh)"
-
-> **What it does:** Auto-installs Docker (if needed), pulls the image, starts the container, and shows access URLs. Works on Debian, Ubuntu, CentOS, RHEL.
 
