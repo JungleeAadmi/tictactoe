@@ -38,6 +38,7 @@ Perfect for **LXC containers in Proxmox**, **VPS**, **Raspberry Pi**, or any **L
 ```bash
 sudo bash -c "$(wget -qO- https://raw.githubusercontent.com/JungleeAadmi/tictactoe/main/install.sh)"
 
+
 ```
 
 ### 🌐 Custom Port Install 8080 - One can change to the available port. 
@@ -51,7 +52,9 @@ PORT=8080 sudo bash -c "$(wget -qO- https://raw.githubusercontent.com/JungleeAad
 ### 🧹 Uninstall command
 
 ```bash
+
 sudo bash -c "$(wget -qO- https://raw.githubusercontent.com/JungleeAadmi/tictactoe/main/uninstall.sh)"
+
 
 ```
 
