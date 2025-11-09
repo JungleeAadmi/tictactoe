@@ -1,13 +1,12 @@
 <div align="center">
 
-# 🎮 Tic Tac Toe
+# 🎮 Tic Tac Toe  
 
 *Just a harmless timepass made entirely by AI — no humans were allowed near the keyboard.*
 
-[![Docker Build](https://img.shields.io/github/actions/workflow/status/JungleeAadmi/tictactoe/docker.yml?branch=main&logo=github&label=Docker%20Build)](https://github.com/JungleeAadmi/tictactoe/actions)
-[![Docker Pulls](https://img.shields.io/badge/docker-ghcr.io%2Fjungleeaadmi%2Ftictactoe-blue?logo=docker)](https://github.com/JungleeAadmi/tictactoe/pkgs/container/tictactoe)
-[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![One-Line Install](https://img.shields.io/badge/install-one%20command-brightgreen.svg)](#-one-line-install)
+![Static Install](https://img.shields.io/badge/setup-one%20line-brightgreen.svg)
+![Nginx](https://img.shields.io/badge/webserver-nginx-orange.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 </div>
 
@@ -15,29 +14,26 @@
 
 ## ✨ Features
 
-A minimalist, iOS-style liquid glass tic-tac-toe with **zero human coding involved**.
+A minimalist tic-tac-toe with **zero human coding involved**.
 
 - 🌟 **Glassmorphism UI** with smooth hover and click feedback  
 - 🎯 **X always starts** — strict alternation with win/draw detection  
-- 📱 **iOS-ish modal** popup with "Play Again" button  
-- 🐳 **Containerized** — runs anywhere Docker exists  
-- ⚡ **One-line install** — like Pi-hole, OMV, and other self-hosted apps  
+- ⚡ **Now native!** — no Docker required, installs directly with nginx
 
 ---
 
 ## 📸 Screenshots
 
 ![Game Screenshot](IMAGES/Screenshots/tictactoe-game-screenshot.png)  
-*The liquid glass aesthetic in action*
+*Ingame screenshot*
 
 ---
 
 ## 🚀 One-Line Install
 
-Perfect for **LXC containers in Proxmox**, VPS, or any Linux system:
+Perfect for **LXC containers in Proxmox**, **VPS**, **Raspberry Pi**, or any **Linux system** — no Docker needed.
 
-### 🧩 Quick Install (Port 8080)
+### 🧩 Quick Install (Port 80 default)
 
 ```bash
-bash -c "$(wget -qO- https://raw.githubusercontent.com/JungleeAadmi/tictactoe/refs/heads/main/install.sh)"
-
+sudo bash -c "$(wget -qO- https://raw.githubusercontent.com/JungleeAadmi/tictactoe/main/install.sh)"
