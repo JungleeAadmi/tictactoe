@@ -1,12 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# ============================================================
-# 🧹 Tic Tac Toe Uninstaller
-# Safely removes the game, nginx config, and site files.
-# Works on Debian, Ubuntu, Armbian, and Proxmox LXC.
-# ============================================================
-
 SITE_DIR="/var/www/tictactoe"
 NGINX_CONF="/etc/nginx/sites-available/tictactoe"
 NGINX_LINK="/etc/nginx/sites-enabled/tictactoe"
@@ -20,7 +14,7 @@ if [ "$(id -u)" -ne 0 ]; then
   exec sudo bash "$0" "$@"
 fi
 
-# Stop nginx (optional, safe even if not running)
+# Stop nginx (optional)
 if systemctl list-units --type=service | grep -q nginx; then
   echo "[INFO] Stopping nginx service..."
   systemctl stop nginx || true
@@ -53,7 +47,7 @@ fi
 
 # Clean log files (optional)
 if [ -f /var/log/nginx/tictactoe.access.log ]; then
-  rm -f /var/log/nginx/tictactoe.*.log
+  rm -f /var/log/nginx/tictactoe.*.log || true
   echo "[INFO] Old logs cleaned up."
 fi
 
